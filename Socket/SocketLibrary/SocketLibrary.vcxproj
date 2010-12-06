@@ -126,6 +126,12 @@
   <ItemGroup>
     <None Include="ReadMe.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TCPclient.cpp" />
+    <ClCompile Include="UDPclient.cpp" />
+    <ClCompile Include="TCPserver.cpp" />
+    <ClCompile Include="UDPserver.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
