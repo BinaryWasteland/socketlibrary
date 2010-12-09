@@ -53,9 +53,9 @@ protected:
 	SOCKET s_;
 	Socket();
 	Socket(SOCKET s);
-		int* refCounter_;
-		friend class SocketServer;
-		friend class SocketSelect;
+	int* refCounter_;
+	friend class SocketServer;
+	friend class SocketSelect;
 private:
 	static void Start();
 	static void End();
