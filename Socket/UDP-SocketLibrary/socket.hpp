@@ -33,6 +33,7 @@ the program(s) have been supplied.
 =============================================================*/
 
 #include <WinSock2.h>
+#include <WS2tcpip.h>
 
 #include <string>
 
