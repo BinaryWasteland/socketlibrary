@@ -22,6 +22,7 @@
     <ProjectGuid>{F7AEA7E3-0835-452A-BE6D-FA67AE73F77A}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>SocketLibrary</RootNamespace>
+    <ProjectName>TCP-SocketLibrary</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -87,14 +88,14 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <OutputFile>$(OutDir)tiny-sgd-mt-vc10.0$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)tcp-socket-sgd-mt-vc10.0$(TargetExt)</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug DLL|Win32'">
     <ClCompile>
       <PrecompiledHeader>
       </PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
@@ -103,7 +104,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <OutputFile>$(OutDir)tiny-gd-mt-vc10.0$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)tcp-socket-gd-mt-vc10.0$(TargetExt)</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -123,7 +124,7 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Lib>
-      <OutputFile>$(OutDir)tiny-s-mt-vc10.0$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)tcp-socket-s-mt-vc10.0$(TargetExt)</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">
@@ -143,7 +144,7 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Lib>
-      <OutputFile>$(OutDir)tiny-mt-vc10.0$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)tcp-socket-mt-vc10.0$(TargetExt)</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
