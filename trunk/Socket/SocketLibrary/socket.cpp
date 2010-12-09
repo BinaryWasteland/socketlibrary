@@ -24,7 +24,7 @@ Socket::Socket()
 {
 	Start();
 	// UDP: use SOCK_DGRAM instead of SOCK_STREAM
-	s_ = socket(AF_INET,SOCK_STREAM,0);
+	s_ = socket(AF_INET,SOCK_STREAM, IPPROTO_TCP);
 
 	if (s_ == INVALID_SOCKET) {
 		throw "INVALID_SOCKET";
