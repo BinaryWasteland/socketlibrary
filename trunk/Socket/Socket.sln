@@ -1,11 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SocketLibrary", "SocketLibrary\SocketLibrary.vcxproj", "{F7AEA7E3-0835-452A-BE6D-FA67AE73F77A}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SocketClient", "SocketClient\SocketClient.vcxproj", "{C18E3A8E-367E-4662-8162-5BD71CE256D3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{779D87AC-C552-405C-AAC3-1D7BFC6E73AA} = {779D87AC-C552-405C-AAC3-1D7BFC6E73AA}
+		{F7AEA7E3-0835-452A-BE6D-FA67AE73F77A} = {F7AEA7E3-0835-452A-BE6D-FA67AE73F77A}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SocketServer", "SocketServer\SocketServer.vcxproj", "{E8113FA1-000B-45F1-94C8-6A8550EBB8ED}"
+	ProjectSection(ProjectDependencies) = postProject
+		{779D87AC-C552-405C-AAC3-1D7BFC6E73AA} = {779D87AC-C552-405C-AAC3-1D7BFC6E73AA}
+		{F7AEA7E3-0835-452A-BE6D-FA67AE73F77A} = {F7AEA7E3-0835-452A-BE6D-FA67AE73F77A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UDP-SocketLibrary", "UDP-SocketLibrary\UDP-SocketLibrary.vcxproj", "{779D87AC-C552-405C-AAC3-1D7BFC6E73AA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TCP-SocketLibrary", "TCP-SocketLibrary\SocketLibrary.vcxproj", "{F7AEA7E3-0835-452A-BE6D-FA67AE73F77A}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
@@ -19,14 +29,6 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F7AEA7E3-0835-452A-BE6D-FA67AE73F77A}.Debug DLL|Win32.ActiveCfg = Debug DLL|Win32
-		{F7AEA7E3-0835-452A-BE6D-FA67AE73F77A}.Debug DLL|Win32.Build.0 = Debug DLL|Win32
-		{F7AEA7E3-0835-452A-BE6D-FA67AE73F77A}.Debug|Win32.ActiveCfg = Debug|Win32
-		{F7AEA7E3-0835-452A-BE6D-FA67AE73F77A}.Debug|Win32.Build.0 = Debug|Win32
-		{F7AEA7E3-0835-452A-BE6D-FA67AE73F77A}.Release DLL|Win32.ActiveCfg = Release DLL|Win32
-		{F7AEA7E3-0835-452A-BE6D-FA67AE73F77A}.Release DLL|Win32.Build.0 = Release DLL|Win32
-		{F7AEA7E3-0835-452A-BE6D-FA67AE73F77A}.Release|Win32.ActiveCfg = Release|Win32
-		{F7AEA7E3-0835-452A-BE6D-FA67AE73F77A}.Release|Win32.Build.0 = Release|Win32
 		{C18E3A8E-367E-4662-8162-5BD71CE256D3}.Debug DLL|Win32.ActiveCfg = Debug DLL|Win32
 		{C18E3A8E-367E-4662-8162-5BD71CE256D3}.Debug DLL|Win32.Build.0 = Debug DLL|Win32
 		{C18E3A8E-367E-4662-8162-5BD71CE256D3}.Debug|Win32.ActiveCfg = Debug|Win32
@@ -43,6 +45,22 @@ Global
 		{E8113FA1-000B-45F1-94C8-6A8550EBB8ED}.Release DLL|Win32.Build.0 = Release DLL|Win32
 		{E8113FA1-000B-45F1-94C8-6A8550EBB8ED}.Release|Win32.ActiveCfg = Release|Win32
 		{E8113FA1-000B-45F1-94C8-6A8550EBB8ED}.Release|Win32.Build.0 = Release|Win32
+		{779D87AC-C552-405C-AAC3-1D7BFC6E73AA}.Debug DLL|Win32.ActiveCfg = Debug DLL|Win32
+		{779D87AC-C552-405C-AAC3-1D7BFC6E73AA}.Debug DLL|Win32.Build.0 = Debug DLL|Win32
+		{779D87AC-C552-405C-AAC3-1D7BFC6E73AA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{779D87AC-C552-405C-AAC3-1D7BFC6E73AA}.Debug|Win32.Build.0 = Debug|Win32
+		{779D87AC-C552-405C-AAC3-1D7BFC6E73AA}.Release DLL|Win32.ActiveCfg = Release|Win32
+		{779D87AC-C552-405C-AAC3-1D7BFC6E73AA}.Release DLL|Win32.Build.0 = Release|Win32
+		{779D87AC-C552-405C-AAC3-1D7BFC6E73AA}.Release|Win32.ActiveCfg = Release|Win32
+		{779D87AC-C552-405C-AAC3-1D7BFC6E73AA}.Release|Win32.Build.0 = Release|Win32
+		{F7AEA7E3-0835-452A-BE6D-FA67AE73F77A}.Debug DLL|Win32.ActiveCfg = Debug DLL|Win32
+		{F7AEA7E3-0835-452A-BE6D-FA67AE73F77A}.Debug DLL|Win32.Build.0 = Debug DLL|Win32
+		{F7AEA7E3-0835-452A-BE6D-FA67AE73F77A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F7AEA7E3-0835-452A-BE6D-FA67AE73F77A}.Debug|Win32.Build.0 = Debug|Win32
+		{F7AEA7E3-0835-452A-BE6D-FA67AE73F77A}.Release DLL|Win32.ActiveCfg = Release DLL|Win32
+		{F7AEA7E3-0835-452A-BE6D-FA67AE73F77A}.Release DLL|Win32.Build.0 = Release DLL|Win32
+		{F7AEA7E3-0835-452A-BE6D-FA67AE73F77A}.Release|Win32.ActiveCfg = Release|Win32
+		{F7AEA7E3-0835-452A-BE6D-FA67AE73F77A}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
