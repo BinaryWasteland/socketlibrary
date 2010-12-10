@@ -33,6 +33,7 @@ int main(int argc, char* argv[]) {
 	cout << "Waiting for connection...\n";
 	Socket* s = sockServ.Accept();
 	cout << "Client connected\n";
+	sockServ.SendLine("Connected to server!");
 	
 	while( true ) {
 		cout << sockServ.ReceiveLine();

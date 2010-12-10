@@ -82,9 +82,6 @@ using namespace std;
 		while (1) {
 			u_long arg = 0;
 
-			if (arg == 0) 
-				break;
-
 			if (arg > 1024) 
 				arg = 1024;
 
@@ -104,7 +101,7 @@ using namespace std;
 		while (1) {
 			char recvByte;
 
-			switch(recv(s_, &recvByte, 1, 0)) 
+			switch(recv(s_, &recvByte, 1024, 0)) 
 			{
 				case 0:
 				return returnVal;
@@ -120,11 +117,11 @@ using namespace std;
 
 	void Socket::SendLine(std::string sentLine) {
 		sentLine += '\n';
-		send(s_,sentLine.c_str(),sentLine.length(),0);
+		send(s_,sentLine.c_str(),1024,0);
 	}
 
 	void Socket::SendBytes(const std::string& sentLine) {
-		send(s_,sentLine.c_str(),sentLine.length(),0);
+		send(s_,sentLine.c_str(),1024,0);
 	}
 
 

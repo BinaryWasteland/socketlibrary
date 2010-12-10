@@ -9,7 +9,7 @@
 	*/
 #include "tcp_SocketServer.hpp"
 
-SocketServer::SocketServer(int port, int connections, TypeSocket type) {
+SocketServer::SocketServer(int port, int connections) {
 	sockaddr_in service;
 	//memset(&service, 0, sizeof(service));
 	service.sin_family = AF_INET /*or PF_INET*/;  
@@ -20,11 +20,6 @@ SocketServer::SocketServer(int port, int connections, TypeSocket type) {
 	if (s_ == INVALID_SOCKET) {
 		Close();
 		throw "INVALID_SOCKET";
-	}
-
-	if(type==NonBlockingSocket) {
-	u_long arg = 1;
-	ioctlsocket(s_, FIONBIO, &arg);
 	}
 
 	/* bind the socket to the internet address */

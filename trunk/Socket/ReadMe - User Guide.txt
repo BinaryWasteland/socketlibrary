@@ -18,6 +18,12 @@ Both very similar in code and allowed for a good base to start from.
 How to use the application:
 
 
+In the Win32 folder start the server first and then start the client afterwards to demonstrate that the client connects to the server.
+Afterwards, in the client you can type words and press enter to have the words sent accross to the server where they will be echoed.
+This can go on as long as possible until the user types 'exit'. In which case the client would shut down and the server would prompt you to exit.
+
+Due to complications the send and recieve functions do not work but the client does connect to the server and is shown server-side via text.
+
 /*=============================================================
 
 Revision History
