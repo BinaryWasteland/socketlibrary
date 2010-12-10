@@ -9,7 +9,7 @@
 	*/
 
 
-#include "SocketClient.hpp"
+#include "tcp_SocketClient.hpp"
 
 SocketClient::SocketClient(const std::string& host, int port) : Socket() {
 	std::string error;
