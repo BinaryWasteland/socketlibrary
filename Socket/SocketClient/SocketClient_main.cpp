@@ -7,9 +7,9 @@ using namespace std;
 #pragma comment (lib, "tcp-socket-gd-mt-vc10.0.lib")
 
 int main() {
-
+	cout << "Client:\n";
   try {
-    SocketClient s("127.0.0.1", 27015);
+    SocketClient s("www.google.com", 80);
 
     s.SendLine("GET / HTTP/1.0");
     s.SendLine("Host: www.google.com");

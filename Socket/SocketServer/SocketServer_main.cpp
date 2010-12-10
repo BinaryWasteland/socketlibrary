@@ -7,7 +7,7 @@ using namespace std;
 #pragma comment (lib, "tcp-socket-gd-mt-vc10.0.lib")
 
 
-unsigned short const PORT = 27015;
+unsigned short const PORT = 2000;
 unsigned short const NUM_CONN = 5;
 
 unsigned __stdcall Answer(void* a) {
@@ -23,9 +23,10 @@ unsigned __stdcall Answer(void* a) {
 
 
 int main(int argc, char* argv[]) {
+	cout << "Server:\n";
 	SocketServer sockServ(PORT, NUM_CONN);
 	
-	while( false ) {
+	while( true ) {
 		Socket* s = sockServ.Accept();
 
 		unsigned returnVal;
