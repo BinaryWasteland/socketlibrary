@@ -6,14 +6,23 @@ using namespace std;
 #include "tcp_SocketSelect.hpp"
 #pragma comment (lib, "tcp-socket-gd-mt-vc10.0.lib")
 
+
+unsigned short const PORT = 2000;
+
 int main() {
 	cout << "Client:\n";
   try {
-    SocketClient s("www.google.com", 80);
+    SocketClient s("127.0.0.1", PORT);
 
-    s.SendLine("GET / HTTP/1.0");
+	string line = "";
+	while(cin >> line) {
+		s.SendLine(line);
+	}
+
+    //s.SendLine("GET");
+	/*
     s.SendLine("Host: www.google.com");
-    s.SendLine("");
+    s.SendLine("");*/
 
     while (1) {
       string l = s.ReceiveLine();
