@@ -33,7 +33,7 @@ the program(s) have been supplied.
 =============================================================*/
 
 #include <WinSock2.h>
-
+#include <stdlib.h>
 #include <string>
 
 enum TypeSocket {BlockingSocket, NonBlockingSocket};
