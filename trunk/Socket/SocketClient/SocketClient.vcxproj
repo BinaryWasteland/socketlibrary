@@ -115,50 +115,50 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)$(PlatformName)</OutDir>
-    <IncludePath>..\Socket\Win32\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\Socket\Win32\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\Win32\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\Win32\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)$(PlatformName)</OutDir>
-    <IncludePath>..\Socket\x64\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\Socket\x64\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\x64\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\x64\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug DLL|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\Socket\Win32\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\Socket\Win32\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\Win32\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\Win32\lib;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)$(PlatformName)</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug DLL|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\Socket\x64\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\Socket\x64\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\x64\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\x64\lib;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)$(PlatformName)</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)$(PlatformName)</OutDir>
-    <IncludePath>..\Socket\Win32\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\Socket\Win32\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\Win32\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\Win32\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)$(PlatformName)</OutDir>
-    <IncludePath>..\Socket\x64\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\Socket\x64\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\x64\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\x64\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)$(PlatformName)</OutDir>
-    <IncludePath>..\Socket\Win32\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\Socket\Win32\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\Win32\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\Win32\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)$(PlatformName)</OutDir>
-    <IncludePath>..\Socket\x64\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\Socket\x64\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\x64\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\x64\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
