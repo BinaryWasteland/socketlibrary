@@ -7,7 +7,7 @@ using namespace std;
 #pragma comment (lib, "tcp-socket-gd-mt-vc10.0.lib")
 
 
-unsigned short const PORT = 49152;
+unsigned short const PORT = 27015;
 unsigned short const NUM_CONN = 5;
 
 unsigned __stdcall Answer(void* a) {
