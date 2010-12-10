@@ -38,28 +38,28 @@ the program(s) have been supplied.
 
 enum TypeSocket {BlockingSocket, NonBlockingSocket};
 
-class Socket {
-public:
 
-	virtual ~Socket();
-	Socket(const Socket&);
-	Socket& operator=(Socket&);
-	std::string ReceiveLine();
-	std::string ReceiveBytes();
-	void   SendLine (std::string);
-	void   SendBytes(const std::string&);
-	void   Close();
-protected:
-	SOCKET s_;
-	Socket();
-	Socket(SOCKET s);
-	int* refCounter_;
-	friend class SocketServer;
-	friend class SocketSelect;
-private:
-	static void Start();
-	static void End();
-	static int  numberOfSockets_;
-};
+	class Socket {
+	public:
+		virtual ~Socket();
+		Socket(const Socket&);
+		Socket& operator=(Socket&);
+		std::string ReceiveLine();
+		std::string ReceiveBytes();
+		void   SendLine (std::string);
+		void   SendBytes(const std::string&);
+		void   Close();
+	protected:
+		SOCKET s_;
+		Socket();
+		Socket(SOCKET s);
+		int* refCounter_;
+		friend class SocketServer;
+		friend class SocketSelect;
+	private:
+		static void Start();
+		static void End();
+		static int  numberOfSockets_;
+	};
 
 #endif // GUARD_socket_hpp20101209_

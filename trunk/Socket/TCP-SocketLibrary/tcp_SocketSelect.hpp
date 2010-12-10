@@ -1,7 +1,7 @@
-#ifndef GUARD_socketserver_hpp20101209_
-#define GUARD_socketserver_hpp20101209_
+#ifndef GUARD_socketselect_hpp20101209_
+#define GUARD_socketselect_hpp20101209_
 
-/** @file: SocketServer.hpp
+/** @file: SocketSelect.hpp
 	@author Greg R. Jacobs
 	@author greg.r.jacobs@gmail.com
 	@author http://gregrjacobs.com
@@ -31,13 +31,17 @@ or in accordance with the terms and conditions
 stipulated in the agreement/contract under which
 the program(s) have been supplied.
 =============================================================*/
-#include "socket.hpp"
+#include "tcp_socket.hpp"
 
-class SocketServer : public Socket {
-public:
-	SocketServer(int port, int connections, TypeSocket type=BlockingSocket);
+// http://msdn.microsoft.com/library/default.asp?url=/library/en-us/winsock/wsapiref_2tiq.asp
+class SocketSelect {
+	public:
+	SocketSelect(Socket const * const s1, Socket const * const s2=NULL, TypeSocket type=BlockingSocket);
 
-	Socket* Accept();
-};
+	bool Readable(Socket const * const s);
 
-#endif // GUARD_socketserver_hpp20101209_
+	private:
+	fd_set fds_;
+}; 
+
+#endif // GUARD_socketselect_hpp20101209_

@@ -7,7 +7,7 @@
 	@note Developed for Visual C++ 10.0
 	@brief ...
 	*/
-#include "SocketServer.hpp"
+#include "udp_SocketServer.hpp"
 
 SocketServer::SocketServer(int port, int connections, TypeSocket type) {
 	sockaddr_in service;

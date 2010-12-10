@@ -18,16 +18,16 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="socket.hpp">
+    <ClInclude Include="udp_SocketClient.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SocketClient.hpp">
+    <ClInclude Include="udp_SocketSelect.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SocketSelect.hpp">
+    <ClInclude Include="udp_socket.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SocketServer.hpp">
+    <ClInclude Include="udp_SocketServer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

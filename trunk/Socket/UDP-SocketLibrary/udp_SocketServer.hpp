@@ -1,8 +1,8 @@
-#ifndef GUARD_socketclient_hpp20101209_
-#define GUARD_socketclient_hpp20101209_
+#ifndef GUARD_socketserver_hpp20101209_
+#define GUARD_socketserver_hpp20101209_
 
-/** @file: SocketClient.hpp
-    @author Greg R. Jacobs
+/** @file: SocketServer.hpp
+	@author Greg R. Jacobs
 	@author greg.r.jacobs@gmail.com
 	@author http://gregrjacobs.com
 	@date 2010-12-09
@@ -31,11 +31,13 @@ or in accordance with the terms and conditions
 stipulated in the agreement/contract under which
 the program(s) have been supplied.
 =============================================================*/
-#include "socket.hpp"
+#include "udp_socket.hpp"
 
-class SocketClient : public Socket {
+class SocketServer : public Socket {
 public:
-	SocketClient(const std::string& host, int port);
+	SocketServer(int port, int connections, TypeSocket type=BlockingSocket);
+
+	Socket* Accept();
 };
 
-#endif // GUARD_socketclient_hpp20101209_
+#endif // GUARD_socketserver_hpp20101209_

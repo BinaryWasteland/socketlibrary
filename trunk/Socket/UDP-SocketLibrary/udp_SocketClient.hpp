@@ -1,8 +1,8 @@
-#ifndef GUARD_socketselect_hpp20101209_
-#define GUARD_socketselect_hpp20101209_
+#ifndef GUARD_socketclient_hpp20101209_
+#define GUARD_socketclient_hpp20101209_
 
-/** @file: SocketSelect.hpp
-	@author Greg R. Jacobs
+/** @file: SocketClient.hpp
+    @author Greg R. Jacobs
 	@author greg.r.jacobs@gmail.com
 	@author http://gregrjacobs.com
 	@date 2010-12-09
@@ -31,17 +31,11 @@ or in accordance with the terms and conditions
 stipulated in the agreement/contract under which
 the program(s) have been supplied.
 =============================================================*/
-#include "socket.hpp"
+#include "udp_socket.hpp"
 
-// http://msdn.microsoft.com/library/default.asp?url=/library/en-us/winsock/wsapiref_2tiq.asp
-class SocketSelect {
-	public:
-	SocketSelect(Socket const * const s1, Socket const * const s2=NULL, TypeSocket type=BlockingSocket);
+class SocketClient : public Socket {
+public:
+	SocketClient(const std::string& host, int port);
+};
 
-	bool Readable(Socket const * const s);
-
-	private:
-	fd_set fds_;
-}; 
-
-#endif // GUARD_socketselect_hpp20101209_
+#endif // GUARD_socketclient_hpp20101209_

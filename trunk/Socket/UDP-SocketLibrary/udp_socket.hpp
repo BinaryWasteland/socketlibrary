@@ -1,7 +1,7 @@
-#ifndef GUARD_socketserver_hpp20101209_
-#define GUARD_socketserver_hpp20101209_
+#ifndef GUARD_socket_hpp20101209_
+#define GUARD_socket_hpp20101209_
 
-/** @file: SocketServer.hpp
+/** @file: socket.hpp
 	@author Greg R. Jacobs
 	@author greg.r.jacobs@gmail.com
 	@author http://gregrjacobs.com
@@ -31,13 +31,36 @@ or in accordance with the terms and conditions
 stipulated in the agreement/contract under which
 the program(s) have been supplied.
 =============================================================*/
-#include "socket.hpp"
 
-class SocketServer : public Socket {
-public:
-	SocketServer(int port, int connections, TypeSocket type=BlockingSocket);
+#include <WinSock2.h>
+#include <WS2tcpip.h>
 
-	Socket* Accept();
-};
+#include <string>
 
-#endif // GUARD_socketserver_hpp20101209_
+	enum TypeSocket {BlockingSocket, NonBlockingSocket};
+
+	class Socket {
+	public:
+
+		virtual ~Socket();
+		Socket(const Socket&);
+		Socket& operator=(Socket&);
+		std::string ReceiveLine();
+		std::string ReceiveBytes();
+		void   SendLine (std::string);
+		void   SendBytes(const std::string&);
+		void   Close();
+	protected:
+		SOCKET s_;
+		Socket();
+		Socket(SOCKET s);
+		int* refCounter_;
+		friend class SocketServer;
+		friend class SocketSelect;
+	private:
+		static void Start();
+		static void End();
+		static int  numberOfSockets_;
+	};
+
+#endif // GUARD_socket_hpp20101209_

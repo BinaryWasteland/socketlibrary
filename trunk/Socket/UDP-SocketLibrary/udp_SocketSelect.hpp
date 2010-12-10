@@ -1,7 +1,7 @@
-#ifndef GUARD_socket_hpp20101209_
-#define GUARD_socket_hpp20101209_
+#ifndef GUARD_socketselect_hpp20101209_
+#define GUARD_socketselect_hpp20101209_
 
-/** @file: socket.hpp
+/** @file: SocketSelect.hpp
 	@author Greg R. Jacobs
 	@author greg.r.jacobs@gmail.com
 	@author http://gregrjacobs.com
@@ -31,36 +31,17 @@ or in accordance with the terms and conditions
 stipulated in the agreement/contract under which
 the program(s) have been supplied.
 =============================================================*/
+#include "udp_socket.hpp"
 
-#include <WinSock2.h>
-#include <WS2tcpip.h>
+// http://msdn.microsoft.com/library/default.asp?url=/library/en-us/winsock/wsapiref_2tiq.asp
+class SocketSelect {
+	public:
+	SocketSelect(Socket const * const s1, Socket const * const s2=NULL, TypeSocket type=BlockingSocket);
 
-#include <string>
+	bool Readable(Socket const * const s);
 
-enum TypeSocket {BlockingSocket, NonBlockingSocket};
+	private:
+	fd_set fds_;
+}; 
 
-class Socket {
-public:
-
-	virtual ~Socket();
-	Socket(const Socket&);
-	Socket& operator=(Socket&);
-	std::string ReceiveLine();
-	std::string ReceiveBytes();
-	void   SendLine (std::string);
-	void   SendBytes(const std::string&);
-	void   Close();
-protected:
-	SOCKET s_;
-	Socket();
-	Socket(SOCKET s);
-	int* refCounter_;
-	friend class SocketServer;
-	friend class SocketSelect;
-private:
-	static void Start();
-	static void End();
-	static int  numberOfSockets_;
-};
-
-#endif // GUARD_socket_hpp20101209_
+#endif // GUARD_socketselect_hpp20101209_

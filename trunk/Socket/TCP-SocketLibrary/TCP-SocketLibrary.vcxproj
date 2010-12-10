@@ -89,6 +89,14 @@
     <Lib>
       <OutputFile>$(OutDir)tcp-socket-sgd-mt-vc10.0$(TargetExt)</OutputFile>
     </Lib>
+    <PostBuildEvent>
+      <Command>rmdir /S /Q "$(OutDir)include"
+mkdir "$(OutDir)include"
+copy /Y "$(ProjectDir)*.hpp" "$(OutDir)include"
+rmdir /S /Q "$(OutDir)lib"
+mkdir "$(OutDir)lib"
+move /Y "$(OutDir)*.lib" "$(OutDir)lib"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug DLL|Win32'">
     <ClCompile>
@@ -105,6 +113,14 @@
     <Lib>
       <OutputFile>$(OutDir)tcp-socket-gd-mt-vc10.0$(TargetExt)</OutputFile>
     </Lib>
+    <PostBuildEvent>
+      <Command>rmdir /S /Q "$(OutDir)include"
+mkdir "$(OutDir)include"
+copy /Y "$(ProjectDir)*.hpp" "$(OutDir)include"
+rmdir /S /Q "$(OutDir)lib"
+mkdir "$(OutDir)lib"
+move /Y "$(OutDir)*.lib" "$(OutDir)lib"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -125,6 +141,14 @@
     <Lib>
       <OutputFile>$(OutDir)tcp-socket-s-mt-vc10.0$(TargetExt)</OutputFile>
     </Lib>
+    <PostBuildEvent>
+      <Command>rmdir /S /Q "$(OutDir)include"
+mkdir "$(OutDir)include"
+copy /Y "$(ProjectDir)*.hpp" "$(OutDir)include"
+rmdir /S /Q "$(OutDir)lib"
+mkdir "$(OutDir)lib"
+move /Y "$(OutDir)*.lib" "$(OutDir)lib"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release DLL|Win32'">
     <ClCompile>
@@ -145,15 +169,23 @@
     <Lib>
       <OutputFile>$(OutDir)tcp-socket-mt-vc10.0$(TargetExt)</OutputFile>
     </Lib>
+    <PostBuildEvent>
+      <Command>rmdir /S /Q "$(OutDir)include"
+mkdir "$(OutDir)include"
+copy /Y "$(ProjectDir)*.hpp" "$(OutDir)include"
+rmdir /S /Q "$(OutDir)lib"
+mkdir "$(OutDir)lib"
+move /Y "$(OutDir)*.lib" "$(OutDir)lib"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="socket.hpp" />
-    <ClInclude Include="SocketClient.hpp" />
-    <ClInclude Include="SocketSelect.hpp" />
-    <ClInclude Include="SocketServer.hpp" />
+    <ClInclude Include="tcp_socket.hpp" />
+    <ClInclude Include="tcp_SocketClient.hpp" />
+    <ClInclude Include="tcp_SocketSelect.hpp" />
+    <ClInclude Include="tcp_SocketServer.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="socket.cpp" />

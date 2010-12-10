@@ -18,16 +18,16 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="socket.hpp">
+    <ClInclude Include="tcp_socket.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SocketClient.hpp">
+    <ClInclude Include="tcp_SocketClient.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SocketSelect.hpp">
+    <ClInclude Include="tcp_SocketSelect.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SocketServer.hpp">
+    <ClInclude Include="tcp_SocketServer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
