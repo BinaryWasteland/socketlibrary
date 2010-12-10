@@ -35,16 +35,11 @@ SocketServer::SocketServer(int port, int connections, TypeSocket type) {
 }
 
 Socket* SocketServer::Accept() {
-	SOCKET hAccepted = accept(s_, NULL, NULL);
-	if (hAccepted == INVALID_SOCKET) {
-	int rc = WSAGetLastError();
-	if(rc==WSAEWOULDBLOCK) {
-		return 0; // non-blocking call, no request pending
-	}
-	else {
-		throw "Invalid Socket";
-	}
-	}
+	SOCKET hAccepted = SOCKET_ERROR;
+	while( hAccepted == SOCKET_ERROR)
+		hAccepted = accept(s_, NULL, NULL);
+
+	
 
 	Socket* returnVal = new Socket(hAccepted);
 	return returnVal;

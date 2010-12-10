@@ -16,8 +16,8 @@ SocketClient::SocketClient(const std::string& host, int port) : Socket() {
 
 	hostent *he;
 	if ((he = gethostbyname(host.c_str())) == 0) {
-	error = strerror(errno);
-	throw error;
+		error = strerror(errno);
+		throw error;
 	}
 
 	sockaddr_in addr;
@@ -26,9 +26,9 @@ SocketClient::SocketClient(const std::string& host, int port) : Socket() {
 	addr.sin_addr = *((in_addr *)he->h_addr);
 	memset(&(addr.sin_zero), 0, 8); 
 
-	if (::connect(s_, (sockaddr *) &addr, sizeof(sockaddr))) {
-	error = strerror(WSAGetLastError());
-	throw error;
+	if (connect(s_, (SOCKADDR*) &addr, sizeof(sockaddr) ) == SOCKET_ERROR) {
+		error = strerror(WSAGetLastError());
+		throw error;
 	}
 }
 /*=============================================================
