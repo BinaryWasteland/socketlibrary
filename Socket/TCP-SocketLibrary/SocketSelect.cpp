@@ -10,7 +10,7 @@
 
 #include "tcp_SocketSelect.hpp"
 
-SocketSelect::SocketSelect(Socket const * const s1, Socket const * const s2, TypeSocket type) {
+SocketSelect::SocketSelect(Socket const * const s1, Socket const * const s2) {
 	FD_ZERO(&fds_);
 	FD_SET(const_cast<Socket*>(s1)->s_,&fds_);
 	if(s2) {
@@ -22,15 +22,12 @@ SocketSelect::SocketSelect(Socket const * const s1, Socket const * const s2, Typ
 	tval.tv_usec = 1;
 
 	TIMEVAL *ptval;
-	if(type==NonBlockingSocket) {
-		ptval = &tval;
-	}
-	else { 
-		ptval = 0;
-	}
+	
+	ptval = &tval;
+	
 
 	if (select (0, &fds_, (fd_set*) 0, (fd_set*) 0, ptval) == SOCKET_ERROR) 
-	throw "Error in select";
+		throw "Error in select";
 }
 
 bool SocketSelect::Readable(Socket const* const s) {

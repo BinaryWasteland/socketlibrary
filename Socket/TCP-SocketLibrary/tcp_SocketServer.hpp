@@ -35,7 +35,7 @@ the program(s) have been supplied.
 
 class SocketServer : public Socket {
 public:
-	SocketServer(int port, int connections, TypeSocket type=BlockingSocket);
+	SocketServer(int port, int connections);
 
 	Socket* Accept();
 };

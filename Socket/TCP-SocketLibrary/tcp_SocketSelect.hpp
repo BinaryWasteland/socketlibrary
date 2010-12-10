@@ -36,7 +36,7 @@ the program(s) have been supplied.
 // http://msdn.microsoft.com/library/default.asp?url=/library/en-us/winsock/wsapiref_2tiq.asp
 class SocketSelect {
 	public:
-	SocketSelect(Socket const * const s1, Socket const * const s2=NULL, TypeSocket type=BlockingSocket);
+	SocketSelect(Socket const * const s1, Socket const * const s2=NULL);
 
 	bool Readable(Socket const * const s);
 

@@ -2,7 +2,7 @@
 #define GUARD_socketclient_hpp20101209_
 
 /** @file: SocketClient.hpp
-    @author Greg R. Jacobs
+	@author Greg R. Jacobs
 	@author greg.r.jacobs@gmail.com
 	@author http://gregrjacobs.com
 	@date 2010-12-09

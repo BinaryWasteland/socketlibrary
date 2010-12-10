@@ -40,10 +40,7 @@ the program(s) have been supplied.
 #include <WS2tcpip.h>
 #pragma comment (lib, "ws2_32.lib")
 
-enum TypeSocket {BlockingSocket, NonBlockingSocket};
-
-
-	class Socket {
+class Socket {
 	public:
 		virtual ~Socket();
 		Socket(const Socket&);
@@ -64,6 +61,6 @@ enum TypeSocket {BlockingSocket, NonBlockingSocket};
 		static void Start();
 		static void End();
 		static int  numberOfSockets_;
-	};
+};
 
 #endif // GUARD_socket_hpp20101209_

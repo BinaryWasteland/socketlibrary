@@ -13,23 +13,14 @@ int main() {
 	cout << "Client:\n";
   try {
     SocketClient s("127.0.0.1", PORT);
-
+	cout << s.ReceiveLine();
 	string line = "";
 	while(cin >> line) {
-		s.SendLine(line);
+		if(line == "exit")
+			break;
+		else
+			s.SendLine(line);
 	}
-
-    //s.SendLine("GET");
-	/*
-    s.SendLine("Host: www.google.com");
-    s.SendLine("");*/
-
-    while (1) {
-      string l = s.ReceiveLine();
-      if (l.empty()) break;
-      cout << l;
-      cout.flush();
-    }
 
   } 
   catch (const char* s) {
