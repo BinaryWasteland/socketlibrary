@@ -11,9 +11,11 @@
 
 SocketServer::SocketServer(int port, int connections, TypeSocket type) {
 	sockaddr_in service;
-	memset(&service, 0, sizeof(service));
-	service.sin_family = AF_INET /*or PF_INET*/;             
-	service.sin_port = htons(port);          
+	//memset(&service, 0, sizeof(service));
+	service.sin_family = AF_INET /*or PF_INET*/;  
+	service.sin_addr.S_un.S_addr = inet_addr("127.0.0.1");
+	service.sin_port = htons(port);  
+	
 	s_ = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 	if (s_ == INVALID_SOCKET) {
 		Close();
@@ -31,7 +33,7 @@ SocketServer::SocketServer(int port, int connections, TypeSocket type) {
 	throw "INVALID_SOCKET";
 	}
   
-	listen(s_, connections);                               
+	listen(s_, connections);     
 }
 
 Socket* SocketServer::Accept() {

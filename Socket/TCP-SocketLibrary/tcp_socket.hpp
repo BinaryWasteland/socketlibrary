@@ -32,9 +32,13 @@ stipulated in the agreement/contract under which
 the program(s) have been supplied.
 =============================================================*/
 
-#include <WinSock2.h>
+
 #include <stdlib.h>
 #include <string>
+
+#include <WinSock2.h>
+#include <WS2tcpip.h>
+#pragma comment (lib, "ws2_32.lib")
 
 enum TypeSocket {BlockingSocket, NonBlockingSocket};
 

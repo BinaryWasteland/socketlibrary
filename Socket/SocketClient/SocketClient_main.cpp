@@ -9,7 +9,7 @@ using namespace std;
 int main() {
 
   try {
-    SocketClient s("www.google.com", 80);
+    SocketClient s("127.0.0.1", 27015);
 
     s.SendLine("GET / HTTP/1.0");
     s.SendLine("Host: www.google.com");
